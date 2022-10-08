@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "JAICP Editor Manager",
+  "version": "1.21",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "browsingData",
+    "tabs",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["search_in_file.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "img/icon.png"
+  },
+  "web_accessible_resources": [
+    "search_in_file.js",
+    "img/*.png"
+  ]
+}
+
+
